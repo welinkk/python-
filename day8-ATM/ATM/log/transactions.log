@@ -1,0 +1,6 @@
+2020-10-10 11:49:14,600 - transaction - INFO - account:1234   action:withdraw    amount:2000.0   interest:100.0
+2020-10-10 11:49:46,969 - transaction - INFO - account:1234   action:withdraw    amount:1000.0   interest:50.0
+2020-10-10 11:52:27,686 - transaction - INFO - account:1234   action:withdraw    amount:2000.0   interest:100.0
+2020-10-10 11:53:48,723 - transaction - INFO - account:1234   action:withdraw    amount:100.0   interest:5.0
+2020-10-10 11:54:29,298 - transaction - INFO - account:1234   action:repay    amount:3000.0   interest:0.0
+2020-10-10 11:54:38,603 - transaction - INFO - account:1234   action:repay    amount:1000.0   interest:0.0

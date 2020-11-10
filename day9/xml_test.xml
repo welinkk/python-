@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.allqj.qjf</groupId>
+        <artifactId>spring-starter-parent</artifactId>
+        <version>1.3.3-BETA</version>
+        <name age="12"/>
+    </parent>
+
+    <groupId>com.allqj</groupId>
+    <artifactId>BED_receivables_java</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>BED_receivables_java</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <!--剔除依赖进来的org.mockito-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mockito</groupId>
+                    <artifactId>mockito-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.allqj.qjf</groupId>
+            <artifactId>ticket-system-client</artifactId>
+        </dependency>
+
+        <!--Jpa-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!--rabbitmq配置-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+            <version>2.0.0.RELEASE</version>
+        </dependency>
+
+        <!--mysql-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.44</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--json-->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+
+        <!--Getter and Setter-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
+        </dependency>
+
+        <!--公共包-->
+        <dependency>
+            <groupId>com.allqj.qjf</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0.8-RELEASE</version>
+        </dependency>
+
+        <!--消息队列工具-->
+        <dependency>
+            <groupId>com.allqj.qjf</groupId>
+            <artifactId>spring-starter-message-queue</artifactId>
+        </dependency>
+
+        <!--mongodb-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-data-mongodb</artifactId>-->
+        <!--</dependency>-->
+
+        <!--Elasticsearch-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.elasticsearch.plugin/delete-by-query -->
+        <dependency>
+            <groupId>org.elasticsearch.plugin</groupId>
+            <artifactId>delete-by-query</artifactId>
+            <version>2.4.1</version>
+        </dependency>
+
+        <!--apache网络时间获取工具包-->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>swagger-models</artifactId>
+                    <groupId>io.swagger</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.xiaoymin/swagger-bootstrap-ui -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <!--手动引入 swagger-models 的 1.5.21 版本解决java.lang.NumberFormatException: For input string: "" 错误-->
+        <dependency>
+            <artifactId>swagger-models</artifactId>
+            <groupId>io.swagger</groupId>
+            <version>1.5.21</version>
+        </dependency>
+        <!--sepc工具-->
+        <dependency>
+            <groupId>com.github.wenhao</groupId>
+            <artifactId>jpa-spec</artifactId>
+            <version>3.2.3</version>
+        </dependency>
+
+        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>1.4.7.RELEASE</version>
+        </dependency>
+
+        <!--eureka-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>2.1.0.RELEASE</version>
+        </dependency>
+
+        <!--Excel-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.14</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.14</version>
+        </dependency>
+        <!-- mock -->
+        <!--<dependency>-->
+        <!--<groupId>org.mockito</groupId>-->
+        <!--<artifactId>mockito-all</artifactId>-->
+        <!--<version>1.10.19</version>-->
+        <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--powermock-->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>2.0.0-RC.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito2</artifactId>
+            <version>2.0.0-RC.3</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.3</version>
+        </dependency>
+
+        <!-- 实现Config的客户端配置 -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+            <version>2.0.1.RELEASE</version>
+        </dependency>
+        <!-- 人才库客户端包       -->
+        <dependency>
+            <groupId>com.allqj.qjf</groupId>
+            <artifactId>organization-client</artifactId>
+        </dependency>
+        <!--授权中心客户端包-->
+        <dependency>
+            <groupId>com.allqj.qjf</groupId>
+            <artifactId>authorization-client</artifactId>
+        </dependency>
+
+
+    </dependencies>
+    <!--人员库客户端依赖-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.allqj.qjf</groupId>
+                <artifactId>organization-module</artifactId>
+                <version>1.0.1-BETA</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--    授权中心客户端依赖-->
+            <dependency>
+                <groupId>com.allqj.qjf</groupId>
+                <artifactId>authorization-module</artifactId>
+                <version>1.0.0-BETA</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.allqj.qjf</groupId>
+                <artifactId>ticket-system-module</artifactId>
+                <version>1.0.1-BETA</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <!--&lt;!&ndash;cloud&ndash;&gt;-->
+    <!--<dependencyManagement>-->
+    <!--<dependencies>-->
+    <!--<dependency>-->
+    <!--<groupId>org.springframework.cloud</groupId>-->
+    <!--<artifactId>spring-cloud-dependencies</artifactId>-->
+    <!--<version>RELEASE</version>-->
+    <!--<type>pom</type>-->
+    <!--<scope>import</scope>-->
+    <!--</dependency>-->
+    <!--</dependencies>-->
+    <!--</dependencyManagement>-->
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.4.1.Final</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- sonar -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+            </plugin>
+            <!-- 代码覆盖率 -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <configuration>
+                    <includes>com.*</includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- protobuf -->
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.5.0</version>
+                <configuration>
+                    <protocArtifact>com.google.protobuf:protoc:3.0.0-beta-2:exe:${os.detected.classifier}
+                    </protocArtifact>
+                    <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:0.14.0:exe:${os.detected.classifier}</pluginArtifact>
+                    <protoSourceRoot>src/main/resources/proto</protoSourceRoot>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compile-custom</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <!--热部署-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 如果没有该项配置，devtools不会起作用，即应用不会restart -->
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+            <!--
+            for deploy as docker image.
+            add by zhangpeng 2018.4.12 -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.3</version>
+                <configuration>
+                    <imageName>registry.cn-beijing.aliyuncs.com/qianjia2018/qianjia_dev:${project.artifactId}
+                    </imageName>
+                    <dockerDirectory>.</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>target</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <distributionManagement>
+        <repository>
+            <id>server</id>
+            <name>releases</name>
+            <url>http://39.106.145.141:9000/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>server</id>
+            <name>snapshots</name>
+            <url>http://39.106.145.141:9000/repository/maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>maven-public</id>
+            <name>maven-public</name>
+            <url>http://39.106.145.141:9000/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven-public</id>
+            <name>maven-public</name>
+            <url>http://39.106.145.141:9000/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
